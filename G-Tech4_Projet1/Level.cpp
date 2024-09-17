@@ -97,6 +97,8 @@ void Level::UpdateGrid()
                 std::cout << "[@]";
             }
         }
+        k = 15;
+        SetConsoleTextAttribute(hConsole, k);
         std::cout << std::endl;
     }
 }
