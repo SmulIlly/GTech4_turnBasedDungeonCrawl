@@ -12,6 +12,11 @@ public:
 	int maxMovement;
 	int Movement;
 
+	int HP;
+	int Atk;
+
+	bool m_dead = false;
+
 	Pawn();
 	~Pawn();
 

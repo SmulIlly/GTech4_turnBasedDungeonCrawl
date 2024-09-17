@@ -7,24 +7,32 @@
       "RelativeMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|solutionrelative:G-Tech4_Projet1\\Level.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Level.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|solutionrelative:G-Tech4_Projet1\\Level.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Pawn.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|solutionrelative:G-Tech4_Projet1\\Pawn.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Monster.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|solutionrelative:G-Tech4_Projet1\\Monster.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Level.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|solutionrelative:G-Tech4_Projet1\\Level.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Tile.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|solutionrelative:G-Tech4_Projet1\\Tile.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Tile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|solutionrelative:G-Tech4_Projet1\\Tile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Pawn.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|solutionrelative:G-Tech4_Projet1\\Pawn.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Monster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|solutionrelative:G-Tech4_Projet1\\Monster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Pawn.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|solutionrelative:G-Tech4_Projet1\\Pawn.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Monster.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|solutionrelative:G-Tech4_Projet1\\Monster.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -33,14 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|solutionrelative:G-Tech4_Projet1\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Tile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|solutionrelative:G-Tech4_Projet1\\Tile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Tile.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|solutionrelative:G-Tech4_Projet1\\Tile.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -62,7 +62,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Monster.cpp",
               "DocumentMoniker": "C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Monster.cpp",
               "RelativeDocumentMoniker": "G-Tech4_Projet1\\Monster.cpp",
@@ -75,7 +75,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "Monster.h",
               "DocumentMoniker": "C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Monster.h",
               "RelativeDocumentMoniker": "G-Tech4_Projet1\\Monster.h",
@@ -83,8 +83,7 @@
               "RelativeToolTip": "G-Tech4_Projet1\\Monster.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-17T14:25:05.937Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-17T14:25:05.937Z"
             },
             {
               "$type": "Document",
@@ -100,7 +99,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
               "Title": "Tile.h",
               "DocumentMoniker": "C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Tile.h",
               "RelativeDocumentMoniker": "G-Tech4_Projet1\\Tile.h",
@@ -113,26 +112,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 3,
               "Title": "Tile.cpp",
               "DocumentMoniker": "C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Tile.cpp",
               "RelativeDocumentMoniker": "G-Tech4_Projet1\\Tile.cpp",
               "ToolTip": "C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Tile.cpp",
               "RelativeToolTip": "G-Tech4_Projet1\\Tile.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-17T09:26:59.444Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Pawn.cpp",
               "DocumentMoniker": "C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Pawn.cpp",
               "RelativeDocumentMoniker": "G-Tech4_Projet1\\Pawn.cpp",
               "ToolTip": "C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Pawn.cpp",
               "RelativeToolTip": "G-Tech4_Projet1\\Pawn.cpp",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACwAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABsAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-17T09:00:26.826Z",
               "EditorCaption": ""
@@ -145,7 +144,7 @@
               "RelativeDocumentMoniker": "G-Tech4_Projet1\\Pawn.h",
               "ToolTip": "C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Pawn.h",
               "RelativeToolTip": "G-Tech4_Projet1\\Pawn.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-09-17T08:59:52.502Z",
               "EditorCaption": ""
@@ -160,12 +159,11 @@
               "RelativeToolTip": "G-Tech4_Projet1\\main.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-17T08:31:40.678Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-17T08:31:40.678Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Game.h",
               "DocumentMoniker": "C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Game.h",
               "RelativeDocumentMoniker": "G-Tech4_Projet1\\Game.h",
@@ -173,12 +171,11 @@
               "RelativeToolTip": "G-Tech4_Projet1\\Game.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-17T08:29:35.333Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-17T08:29:35.333Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Game.cpp",
               "DocumentMoniker": "C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Game.cpp",
               "RelativeDocumentMoniker": "G-Tech4_Projet1\\Game.cpp",
@@ -186,18 +183,17 @@
               "RelativeToolTip": "G-Tech4_Projet1\\Game.cpp",
               "ViewState": "AgIAAAEAAAAAAAAAAIAwwA8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-17T08:29:19.491Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-17T08:29:19.491Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Level.h",
               "DocumentMoniker": "C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Level.h",
               "RelativeDocumentMoniker": "G-Tech4_Projet1\\Level.h",
               "ToolTip": "C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Level.h",
               "RelativeToolTip": "G-Tech4_Projet1\\Level.h",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-09-17T07:56:42.959Z",
               "EditorCaption": ""
@@ -210,7 +206,7 @@
               "RelativeDocumentMoniker": "G-Tech4_Projet1\\Level.cpp",
               "ToolTip": "C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Level.cpp",
               "RelativeToolTip": "G-Tech4_Projet1\\Level.cpp",
-              "ViewState": "AgIAAK4AAAAAAAAAAAAwwLsAAABqAAAAAAAAAA==",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAQwG4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-17T07:56:45.925Z",
               "EditorCaption": ""

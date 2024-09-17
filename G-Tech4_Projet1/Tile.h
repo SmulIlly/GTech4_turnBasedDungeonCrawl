@@ -8,6 +8,7 @@ class Tile
 public:
     Pawn* pPawn;
     bool isWalkable;
+    bool isAttackable;
 
     Tile();
     ~Tile();

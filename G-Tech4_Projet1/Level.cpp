@@ -63,6 +63,19 @@ void Level::initialize()
 
 void Level::UpdateGrid()
 {
+    //Monsters in grid
+    for (auto i = Monsters.begin(); i != Monsters.end();) {
+        if ((*i)->m_dead == false)
+        {
+            grid[(*i)->posX][(*i)->posY]->pPawn = *i;
+            ++i; // Avancer l'itérateur si l'élément n'est pas supprimé
+        }
+        else
+        {
+            i = Monsters.erase(i); // Supprimer l'élément et obtenir l'itérateur suivant
+        }
+    }
+
     //Player in grid
     grid[player->posX][player->posY]->pPawn = player;
     for (int y = 0; y < GridSizeY; ++y)
@@ -72,17 +85,33 @@ void Level::UpdateGrid()
             int disX = std::abs(x - player->posX);
             int disY = std::abs(y - player->posY);
             int dis = disX + disY;
-            if (dis > 0 && dis < player->Movement + 1) {
+
+            grid[x][y]->isWalkable = false;
+            grid[x][y]->isAttackable = false;
+            if (dis > 0 && dis <= player->Movement && grid[x][y]->pPawn == nullptr) {
                 grid[x][y]->isWalkable = true;
             }
-            else {
-                grid[x][y]->isWalkable = false;
+            if (dis <= player->Movement + 1 && grid[x][y]->pPawn != nullptr) {
+                if (grid[x][y]->pPawn->isMonster() == true && grid[x][y]->pPawn->m_dead == false) {
+                    grid[x][y]->isAttackable = true;
+                }
+                
             }
+
         }
     }
-    //Monsters in grid
-    for (int x = 0; x < Monsters.size(); x++) {
-        grid[Monsters[x]->posX][Monsters[x]->posY]->pPawn = Monsters[x];
+
+
+    //check dead
+    for (int y = 0; y < GridSizeY; ++y)
+    {
+        for (int x = 0; x < GridSizeX; ++x)
+        {
+            if (grid[x][y]->pPawn != nullptr && grid[x][y]->pPawn->m_dead == true) {
+                grid[x][y]->pPawn = nullptr;
+
+            }
+        }
     }
 
     // Affichage
@@ -97,6 +126,9 @@ void Level::UpdateGrid()
             k = 15;
             if (grid[x][y]->isWalkable == true) {
                 k = 23;
+            }
+            if (grid[x][y]->isAttackable == true) {
+                k = 215;
             }
             if (y == SelectorposY && x == SelectorposX) {
                 k = 71; // Couleur ou attribut pour le sélecteur
@@ -162,10 +194,20 @@ void Level::InputUpdate()
         int disY = std::abs(SelectorposY - player->posY);
         int dis = disX + disY;
         if (dis <= player->Movement) {
-
-            Level::move(player, SelectorposX, SelectorposY, dis);
-
+            if (grid[SelectorposX][SelectorposY]->pPawn == nullptr) { //if position is not the same as player or monster
+                Level::move(player, SelectorposX, SelectorposY, dis);
+            }
             UpdateGrid();
+        }
+        if (dis == 1) {
+            if (grid[SelectorposX][SelectorposY]->pPawn != nullptr) {
+                if (grid[SelectorposX][SelectorposY]->pPawn->isMonster() == true) {
+                    Level::attack(player, grid[SelectorposX][SelectorposY]->pPawn);
+                }
+            }
+            UpdateGrid();
+            
+
         }
     }
     if (pressedKey == ESC) {
@@ -199,12 +241,18 @@ bool Level::setRandomPosition(Pawn* pPawn) {
 }
 
 void Level::move(Pawn* pawn, int x, int y, int dis) {
-    if (grid[x][y]->pPawn == nullptr) { //if position is not the same as player
-            pawn->Movement -= dis;
-            grid[pawn->posX][pawn->posY]->pPawn = nullptr;
-            pawn->posX = x;
-            pawn->posY = y;
-            grid[player->posX][player->posY]->pPawn = player;
+    
+     pawn->Movement -= dis;
+     grid[pawn->posX][pawn->posY]->pPawn = nullptr;
+     pawn->posX = x;
+     pawn->posY = y;
+     grid[player->posX][player->posY]->pPawn = player;
+}
 
+void Level::attack(Pawn* origin, Pawn* target) {
+    target->HP -= origin->Atk;
+    if (target->HP <= 0) {
+        target->m_dead = true;
     }
+    endTurn();
 }

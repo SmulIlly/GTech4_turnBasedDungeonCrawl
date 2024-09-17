@@ -5,7 +5,7 @@
 #include "Faucheur.h"
 
 
-Pawn::Pawn()
+Pawn::Pawn() : HP(0), Atk(0), maxMovement(0), Movement(0), posX(0), posY(0)
 {
 
 }
@@ -18,18 +18,29 @@ Pawn* Pawn::Constructor(int id) {
 
 	if (id == 1) { //player
 		Player* newObj = new Player;
+		newObj->HP = 3;
+		newObj->Atk = 1;
 		return newObj;
 	}
 	if (id == 2) { //golem
 		Golem* newObj = new Golem;
+		newObj->maxMovement = 0;
+		newObj->HP = 2;
+		newObj->Atk = 2;
 		return newObj;
 	}
 	if (id == 3) { //spectre
 		Spectre* newObj = new Spectre;
+		newObj->maxMovement = 1;
+		newObj->HP = 1;
+		newObj->Atk = 1;
 		return newObj;
 	}
 	if (id == 4) { //faucheur
 		Faucheur* newObj = new Faucheur;
+		newObj->maxMovement = 1;
+		newObj->HP = 5;
+		newObj->Atk = 3;
 		return newObj;
 	}
 	else {

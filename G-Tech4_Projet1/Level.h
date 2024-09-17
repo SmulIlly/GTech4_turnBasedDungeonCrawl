@@ -23,6 +23,7 @@ public:
     void endTurn();
     bool setRandomPosition(Pawn* pPawn);
     void move(Pawn* Pawn, int x, int y, int dis);
+    void attack(Pawn* origin, Pawn* target);
 
 protected:
     int GridSizeX;
