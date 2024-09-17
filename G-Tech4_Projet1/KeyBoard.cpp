@@ -58,6 +58,22 @@ bool Keyboard::isRIGHTpressed() {
     return false;
 };
 
+bool Keyboard::isSPACEpressed() {
+    if (GetAsyncKeyState(VK_SPACE))
+    {
+        return true;
+    }
+    return false;
+}
+
+bool Keyboard::isESCpressed() {
+    if (GetAsyncKeyState(VK_ESCAPE))
+    {
+        return true;
+    }
+    return false;
+}
+
 
 
 void Keyboard::updateInput() {
@@ -74,5 +90,11 @@ void Keyboard::updateInput() {
     }
     if (isRIGHTpressed()) {
         m_state |= RIGHT;
+    }
+    if (isSPACEpressed()) {
+        m_state |= RIGHT;
+    }
+    if (isESCpressed()) {
+        m_state |= ESC;
     }
 }

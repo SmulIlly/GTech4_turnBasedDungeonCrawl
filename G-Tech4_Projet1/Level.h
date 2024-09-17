@@ -2,6 +2,7 @@
 #define Level_hpp
 
 #include "Pawn.h"
+#include "Input.h"
 
 class Level
 {
@@ -13,11 +14,15 @@ public:
 	void intialize();
 	void UpdateGrid();
 
+	void InputUpdate(InputControl* inputDevice);
+
 protected:
 
 	int GridSizeX;
 	int GridSizeY;
 	Pawn AllPawn;
+
+	bool inputFlag;
 
 };
 

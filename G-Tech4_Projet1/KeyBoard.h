@@ -12,6 +12,9 @@ public:
 	bool isLEFTpressed();
 	bool isRIGHTpressed();
 
+	bool isSPACEpressed();
+	bool isESCpressed();
+
 
 
 	void updateInput() override;
