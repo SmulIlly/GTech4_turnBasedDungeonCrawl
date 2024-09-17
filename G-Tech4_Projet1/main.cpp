@@ -5,5 +5,6 @@
 int main()
 {
 	Game Game;
+
 	Game.Run();
 }

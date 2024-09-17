@@ -16,10 +16,15 @@ void Game::Run()
 {
 	InputControl* inputControl = new Keyboard();
 
-	Level Level1(10,10);
+	Level Level1(20,10);
 
-	Level1.InputUpdate(inputControl);
-	Level1.UpdateGrid();
+	
+	Level1.initialize();
+
+	while (true) {
+		Level1.InputUpdate(inputControl);
+		//Level1.UpdateGrid();
+	}
 	
 }
 

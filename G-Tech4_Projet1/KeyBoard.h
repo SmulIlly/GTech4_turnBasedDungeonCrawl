@@ -7,7 +7,7 @@ public:
 	//bool isAZERTY();
 
 
-	bool isUPpressed();
+	/*bool isUPpressed();
 	bool isDOWNpressed();
 	bool isLEFTpressed();
 	bool isRIGHTpressed();
@@ -17,6 +17,6 @@ public:
 
 
 
-	void updateInput() override;
+	void updateInput() override;*/
 
 };

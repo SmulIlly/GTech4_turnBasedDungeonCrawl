@@ -13,12 +13,11 @@ bool Keyboard::isAZERTY() {
     return LOWORD(layout) == 0x040C;
 }; */
 
-bool Keyboard::isUPpressed() {
+/*bool Keyboard::isUPpressed() {
 
     //if (isQWERTY() == true) {
     if (GetAsyncKeyState(VK_UP))
     {
-        std::cout << "Up key pressed\n";
         return true;
     }
 
@@ -97,4 +96,4 @@ void Keyboard::updateInput() {
     if (isESCpressed()) {
         m_state |= ESC;
     }
-}
+} */

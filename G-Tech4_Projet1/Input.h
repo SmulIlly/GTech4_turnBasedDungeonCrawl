@@ -7,7 +7,7 @@ class InputControl
 {
 public:
 
-	enum State {
+	/*enum State {
 		NONE = 0,
 		UP = 1 << 0, // 0001
 		DOWN = 1 << 1, // 0010
@@ -19,7 +19,7 @@ public:
 
 	int m_state = NONE;  // Current state
 
-	virtual void updateInput() = 0;
+	virtual void updateInput() = 0;*/
 };
 
 #endif
