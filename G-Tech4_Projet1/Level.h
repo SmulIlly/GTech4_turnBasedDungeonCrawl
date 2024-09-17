@@ -7,7 +7,7 @@ class Level
 {
 public:
 
-	Level(int gridSizeX, int gridSizeY, Pawn pawn);
+	Level(int gridSizeX, int gridSizeY);
 	~Level();
 
 	void intialize();
@@ -17,7 +17,7 @@ protected:
 
 	int GridSizeX;
 	int GridSizeY;
-	Pawn AllPawn;
+
 
 };
 

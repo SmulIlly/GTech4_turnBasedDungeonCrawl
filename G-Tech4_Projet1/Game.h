@@ -8,6 +8,7 @@ public:
 	Game();
 	~Game();
 
+	void Run();
 
 protected:
 
