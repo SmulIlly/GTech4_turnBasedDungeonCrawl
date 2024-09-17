@@ -1,20 +1,24 @@
 #ifndef Input_hpp
 #define Input_hpp
 
-class Input
+#pragma once
+
+class InputControl
 {
 public:
 
-	Input();
-	~Input();
+	enum State {
+		NONE = 0,
+		UP = 1 << 0, // 0001
+		DOWN = 1 << 1, // 0010
+		LEFT = 1 << 2, // 0100
+		RIGHT = 1 << 3,  // 1000
+	};
 
-private:
+	int m_state = NONE;  // Current state
 
+	virtual void updateInput() = 0;
 };
 
-
-
-#endif // !Input
-
-#pragma once
+#endif
 

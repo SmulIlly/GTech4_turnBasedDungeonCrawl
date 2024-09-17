@@ -1,1 +1,78 @@
 #include "KeyBoard.h"
+
+#include <Windows.h>
+#include <iostream>
+
+
+/*bool Keyboard::isQWERTY() {
+    HKL layout = GetKeyboardLayout(0);
+    return LOWORD(layout) == 0x0409;
+};
+bool Keyboard::isAZERTY() {
+    HKL layout = GetKeyboardLayout(0);
+    return LOWORD(layout) == 0x040C;
+}; */
+
+bool Keyboard::isUPpressed() {
+
+    //if (isQWERTY() == true) {
+    if (GetAsyncKeyState(VK_UP))
+    {
+        std::cout << "Up key pressed\n";
+        return true;
+    }
+
+    //}
+    //if (isAZERTY() == true) {
+
+
+    //}
+    return false;
+};
+bool Keyboard::isDOWNpressed() {
+    if (GetAsyncKeyState(VK_DOWN))
+    {
+        return true;
+    }
+    return false;
+};
+bool Keyboard::isLEFTpressed() {
+
+    //if (isQWERTY() == true) {
+    if (GetAsyncKeyState(VK_LEFT))
+    {
+        return true;
+    }
+
+    //}
+    //if (isAZERTY() == true) {
+
+    //}
+    return false;
+};
+bool Keyboard::isRIGHTpressed() {
+    if (GetAsyncKeyState(VK_RIGHT))
+    {
+        return true;
+    }
+    return false;
+};
+
+
+
+void Keyboard::updateInput() {
+    m_state = NONE;
+
+    if (isUPpressed()) {
+        m_state |= UP;
+    }
+    if (isDOWNpressed()) {
+        m_state |= DOWN;
+    }
+    if (isLEFTpressed()) {
+        m_state |= LEFT;
+    }
+    if (isRIGHTpressed()) {
+        m_state |= RIGHT;
+    }
+}
