@@ -49,11 +49,21 @@ void Level::initialize()
     SelectorposY = player->posY;
     grid[player->posX][player->posY]->pPawn = player;
 
+    //monster spawn
+    Monsters.push_back(Pawn::Constructor(2));
+    Monsters.push_back(Pawn::Constructor(3));
+    Monsters.push_back(Pawn::Constructor(4));
+    for (int x = 0; x < Monsters.size(); x++) {
+        setRandomPosition(Monsters[x]);
+    }
+
+
     UpdateGrid();
 }
 
 void Level::UpdateGrid()
 {
+    //Player in grid
     grid[player->posX][player->posY]->pPawn = player;
     for (int y = 0; y < GridSizeY; ++y)
     {
@@ -69,6 +79,10 @@ void Level::UpdateGrid()
                 grid[x][y]->isWalkable = false;
             }
         }
+    }
+    //Monsters in grid
+    for (int x = 0; x < Monsters.size(); x++) {
+        grid[Monsters[x]->posX][Monsters[x]->posY]->pPawn = Monsters[x];
     }
 
     // Affichage
@@ -93,8 +107,19 @@ void Level::UpdateGrid()
             if (grid[x][y]->pPawn == nullptr) {
                 std::cout << "[ ]";
             }
-            if (grid[x][y]->pPawn == player) {
-                std::cout << "[@]";
+            else {
+                if (grid[x][y]->pPawn == player) {
+                    std::cout << "[@]";
+                }
+                if (grid[x][y]->pPawn->isGolem() == true) {
+                    std::cout << "[G]";
+                }
+                if (grid[x][y]->pPawn->isSpectre() == true) {
+                    std::cout << "[S]";
+                }
+                if (grid[x][y]->pPawn->isFaucheur() == true) {
+                    std::cout << "[F]";
+                } 
             }
         }
         k = 15;
@@ -103,7 +128,7 @@ void Level::UpdateGrid()
     }
 }
 
-void Level::InputUpdate(InputControl* inputDevice)
+void Level::InputUpdate()
 {
     int pressedKey = _getch();
     //std::cout << pressedKey;
@@ -137,11 +162,9 @@ void Level::InputUpdate(InputControl* inputDevice)
         int disY = std::abs(SelectorposY - player->posY);
         int dis = disX + disY;
         if (dis <= player->Movement) {
-            player->Movement -= dis;
-            grid[player->posX][player->posY]->pPawn = nullptr;
-            player->posX = SelectorposX;
-            player->posY = SelectorposY;
-            grid[player->posX][player->posY]->pPawn = player;
+
+            Level::move(player, SelectorposX, SelectorposY, dis);
+
             UpdateGrid();
         }
     }
@@ -154,4 +177,34 @@ void Level::endTurn() {
     // ENNEMY TURN //
     player->Movement = player->maxMovement;
     UpdateGrid();
+}
+
+bool Level::setRandomPosition(Pawn* pPawn) {
+
+    int x = rand() % GridSizeX;
+    int y = rand() % GridSizeY;
+    if (x != player->posX || y != player->posY) { //if position is not the same as player
+        for (int i = 0; i < Monsters.size(); i++) {
+            if (x != Monsters[i]->posX || y != Monsters[i]->posY) { //and its not the same as any monsters
+                pPawn->posX = x;
+                pPawn->posY = y;
+                return true;
+            }
+        }
+
+    }
+    else {
+        setRandomPosition(pPawn);
+    }
+}
+
+void Level::move(Pawn* pawn, int x, int y, int dis) {
+    if (grid[x][y]->pPawn == nullptr) { //if position is not the same as player
+            pawn->Movement -= dis;
+            grid[pawn->posX][pawn->posY]->pPawn = nullptr;
+            pawn->posX = x;
+            pawn->posY = y;
+            grid[player->posX][player->posY]->pPawn = player;
+
+    }
 }

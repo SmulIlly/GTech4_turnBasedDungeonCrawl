@@ -10,6 +10,8 @@ public:
 	Monster();
 	~Monster();
 
+	bool isMonster();
+
 private:
 
 };

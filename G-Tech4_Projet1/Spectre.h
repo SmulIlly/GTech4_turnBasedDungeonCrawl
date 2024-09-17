@@ -10,6 +10,7 @@ public:
 	Spectre();
 	~Spectre();
 
+	bool isSpectre();
 private:
 
 };

@@ -1,2 +1,5 @@
-﻿  Level.cpp
+﻿  Game.cpp
+  Level.cpp
+  Génération de code en cours...
+C:\Users\ewallis\Documents\GitHub\GTech4_turnBasedDungeonCrawl\G-Tech4_Projet1\Level.cpp(199,1): warning C4715: 'Level::setRandomPosition' : les chemins de contrôle ne retournent pas tous une valeur
   G-Tech4_Projet1.vcxproj -> C:\Users\ewallis\Documents\GitHub\GTech4_turnBasedDungeonCrawl\x64\Debug\G-Tech4_Projet1.exe

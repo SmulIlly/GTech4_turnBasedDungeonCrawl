@@ -4,12 +4,14 @@
 #include "Tile.h"
 #include "Pawn.h"
 #include "Input.h"
+#include "Monster.h"
 #include <vector>
 
 class Level
 {
 public:
     Pawn* player;
+    std::vector<Pawn*> Monsters;
     std::vector<std::vector<Tile*>> grid;
 
     Level(int gridSizeX, int gridSizeY);
@@ -17,8 +19,10 @@ public:
 
     void initialize();
     void UpdateGrid();
-    void InputUpdate(InputControl* inputDevice);
+    void InputUpdate();
     void endTurn();
+    bool setRandomPosition(Pawn* pPawn);
+    void move(Pawn* Pawn, int x, int y, int dis);
 
 protected:
     int GridSizeX;

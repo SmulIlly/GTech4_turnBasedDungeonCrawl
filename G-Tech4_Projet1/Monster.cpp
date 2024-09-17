@@ -8,3 +8,5 @@ Monster::Monster()
 Monster::~Monster()
 {
 }
+
+bool Monster::isMonster() { return true; }

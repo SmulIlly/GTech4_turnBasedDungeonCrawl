@@ -16,6 +16,10 @@ public:
 	~Pawn();
 
 	static Pawn* Constructor(int id);
+	virtual bool isGolem();
+	virtual bool isSpectre();
+	virtual bool isFaucheur();
+	virtual bool isMonster();
 
 private:
 

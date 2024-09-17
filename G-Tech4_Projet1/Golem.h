@@ -9,6 +9,8 @@ public:
 	Golem();
 	~Golem();
 
+	bool isGolem();
+
 private:
 
 };

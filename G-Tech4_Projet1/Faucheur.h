@@ -10,6 +10,8 @@ public:
 	Faucheur();
 	~Faucheur();
 
+	bool isFaucheur();
+
 private:
 
 };
