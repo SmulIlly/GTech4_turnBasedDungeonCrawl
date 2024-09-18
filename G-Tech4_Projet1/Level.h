@@ -16,7 +16,8 @@ public:
     std::vector<std::vector<Tile*>> grid;
     std::vector<std::string> Logs;
 
-    Level(int gridSizeX, int gridSizeY);
+
+    Level(const std::vector<std::string>& map, int gridSizeX, int gridSizeY);
     ~Level();
 
     void initialize();
@@ -28,8 +29,11 @@ public:
     void attack(Pawn* origin, Pawn* target);
     void ennemyTurn();
     void Log(std::string log);
+    void GameOver();
+    void Reset();
 
 protected:
+    std::vector<std::string> map;
     int GridSizeX;
     int GridSizeY;
 

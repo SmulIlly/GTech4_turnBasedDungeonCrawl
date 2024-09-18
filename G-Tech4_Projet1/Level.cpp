@@ -12,10 +12,9 @@
 #define SPACE 32
 #define ESC 27
 
-Level::Level(int gridSizeX, int gridSizeY)
-    : GridSizeX(gridSizeX), GridSizeY(gridSizeY), player(Pawn::Constructor(1)), SelectorposX(0), SelectorposY(0), inputFlag(false)
-{
-}
+Level::Level(const std::vector<std::string>& map, int gridSizeX, int gridSizeY)
+    :map(map), GridSizeX(gridSizeX), GridSizeY(gridSizeY), player(Pawn::Constructor(1)), SelectorposX(0), SelectorposY(0), inputFlag(false)
+{}
 
 Level::~Level()
 {
@@ -41,20 +40,50 @@ void Level::initialize()
         line.clear();
     }
 
-    player->posX = 1;
-    player->posY = 3;
-    player->maxMovement = 5;
+    //default player values if no player in map
+    player->posX = GridSizeX/2;
+    player->posY = GridSizeY/2;
+    player->maxMovement = 3;
     player->Movement = player->maxMovement;
+
+
+    for (int y = 0; y < GridSizeY; y++) {
+        for (int x = 0; x < GridSizeX; x++) {
+            char c = map[y].at(x);
+            if (c == '@') {
+                player->posX = x;
+                player->posY = y;
+            }
+        }
+    }
     SelectorposX = player->posX;
     SelectorposY = player->posY;
     grid[player->posX][player->posY]->pPawn = player;
 
+
     //monster spawn
-    Monsters.push_back(Pawn::Constructor(2));
-    Monsters.push_back(Pawn::Constructor(3));
-    Monsters.push_back(Pawn::Constructor(4));
-    for (int x = 0; x < Monsters.size(); x++) {
-        setRandomPosition(Monsters[x]);
+    for (int y = 0; y < GridSizeY; y++) {
+        for (int x = 0; x < GridSizeX; x++) {
+            char c = map[y].at(x);
+            if (c == 'G') {
+                Pawn* newGolem = Pawn::Constructor(2);
+                newGolem->posX = x;
+                newGolem->posY = y;
+                Monsters.push_back(newGolem);
+            }
+            if (c == 'S') {
+                Pawn* newSpectre = Pawn::Constructor(3);
+                newSpectre->posX = x;
+                newSpectre->posY = y;
+                Monsters.push_back(newSpectre);
+            }
+            if (c == 'F') {
+                Pawn* newFaucheur = Pawn::Constructor(4);
+                newFaucheur->posX = x;
+                newFaucheur->posY = y;
+                Monsters.push_back(newFaucheur);
+            }
+        }
     }
 
 
@@ -394,4 +423,12 @@ void Level::ennemyTurn() {
 
 void Level::Log(std::string log) {
     Logs.push_back(log);
+}
+
+void Level::GameOver() {
+
+}
+
+void Level::Reset() {
+
 }
