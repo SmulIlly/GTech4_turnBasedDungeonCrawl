@@ -3,6 +3,7 @@
 #include "Input.h"
 #include "Keyboard.h"
 
+
 #include <string>
 #include <fstream>
 #include <iostream>
@@ -21,7 +22,9 @@ void Game::Run()
 {
 	std::vector<std::string> map;
 
-	std::ifstream MapFolder("C:/Users/bdaniel/Desktop/Map1.txt");
+	std::ifstream MapText;
+
+	std::ifstream MapFolder("C:/Users/bdaniel/Documents/GitHub/GTech4_turnBasedDungeonCrawl/Map/Map1.txt");
 	std::string Ligne;
 
 	if (MapFolder)
