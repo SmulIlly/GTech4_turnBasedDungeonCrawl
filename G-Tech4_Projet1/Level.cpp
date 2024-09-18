@@ -113,6 +113,9 @@ void Level::UpdateGrid()
             }
         }
     }
+    if (player->m_dead == true) {
+        //GAME OVER / RESET
+    }
 
     // Affichage
     system("cls");
@@ -216,13 +219,13 @@ void Level::InputUpdate()
 }
 
 void Level::endTurn() {
-    // ENNEMY TURN //
+    ennemyTurn();
     player->Movement = player->maxMovement;
     UpdateGrid();
 }
 
 bool Level::setRandomPosition(Pawn* pPawn) {
-
+    
     int x = rand() % GridSizeX;
     int y = rand() % GridSizeY;
     if (x != player->posX || y != player->posY) { //if position is not the same as player
@@ -254,5 +257,83 @@ void Level::attack(Pawn* origin, Pawn* target) {
     if (target->HP <= 0) {
         target->m_dead = true;
     }
-    endTurn();
+
+    if (origin == player) {
+        endTurn();
+    }
+    
+}
+
+void Level::ennemyTurn() {
+    for (int i = 0; i < Monsters.size(); i++) {
+        Monsters[i]->Movement = Monsters[i]->maxMovement;
+        int disX = std::abs(Monsters[i]->posX - player->posX);
+        int disY = std::abs(Monsters[i]->posY - player->posY);
+        int dis = disX + disY;
+        if (dis == 1) {
+            Level::attack(Monsters[i], player);
+        }
+
+        //Monster specific behaviour
+        if (Monsters[i]->isFaucheur() == true) {
+            //avancer vers joueur
+            for (Monsters[i]->Movement; Monsters[i]->Movement > 0; Monsters[i]->Movement--) {
+                if (dis > 1) {
+                    if (disX >= disY) {
+                        if (Monsters[i]->posX > player->posX) {
+                            Monsters[i]->posX -= 1;
+                         
+                        }
+                        if (Monsters[i]->posX < player->posX) {
+                            Monsters[i]->posX += 1;
+                         
+                        }
+                    }
+                    else {
+                        if (Monsters[i]->posY > player->posY) {
+                            Monsters[i]->posY -= 1;
+                        
+                        }
+                        if (Monsters[i]->posY < player->posY) {
+                            Monsters[i]->posY += 1;
+                            
+                        }
+                    }
+                }
+            }
+        }
+        if (Monsters[i]->isSpectre() == true) {
+            //s'enfuir du joueur
+            
+            for (Monsters[i]->Movement; Monsters[i]->Movement > 0; Monsters[i]->Movement--) {
+                if (dis > 1) {
+                    if (disX >= disY) {
+                        if (Monsters[i]->posX < GridSizeX-1 && Monsters[i]->posX >0) {
+                            if (Monsters[i]->posX > player->posX) {
+                                Monsters[i]->posX += 1;
+                            }
+                            if (Monsters[i]->posX < player->posX) {
+                                Monsters[i]->posX -= 1;
+                            }
+                        }
+                    }
+                    else {
+                        if (Monsters[i]->posY < GridSizeY-1 && Monsters[i]->posY >0) {
+                            if (Monsters[i]->posY > player->posY) {
+                                Monsters[i]->posY += 1;
+                                
+                            }
+                            if (Monsters[i]->posY < player->posY) {
+                                Monsters[i]->posY -= 1;
+                            }
+                        }
+                    }
+
+                }
+                
+               
+            }
+        }
+
+    }
 }
