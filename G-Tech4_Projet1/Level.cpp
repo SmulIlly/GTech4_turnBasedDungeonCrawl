@@ -2,6 +2,7 @@
 #include <vector>
 #include <conio.h>
 #include <windows.h>
+#include <queue>
 #include "Level.h"
 
 // Définition des codes des touches
@@ -109,28 +110,9 @@ void Level::UpdateGrid()
 
     //Player in grid
     grid[player->posX][player->posY]->pPawn = player;
-    for (int y = 0; y < GridSizeY; ++y)
-    {
-        for (int x = 0; x < GridSizeX; ++x)
-        {
-            int disX = std::abs(x - player->posX);
-            int disY = std::abs(y - player->posY);
-            int dis = disX + disY;
 
-            grid[x][y]->isWalkable = false;
-            grid[x][y]->isAttackable = false;
-            if (dis > 0 && dis <= player->Movement && grid[x][y]->pPawn == nullptr) {
-                grid[x][y]->isWalkable = true;
-            }
-            if (dis <= player->Movement + 1 && grid[x][y]->pPawn != nullptr) {
-                if (grid[x][y]->pPawn->isMonster() == true && grid[x][y]->pPawn->m_dead == false) {
-                    grid[x][y]->isAttackable = true;
-                }
-                
-            }
 
-        }
-    }
+    calculateWalkableAndAttackable();
 
 
     //check dead
@@ -254,7 +236,7 @@ void Level::InputUpdate()
         int disY = std::abs(SelectorposY - player->posY);
         int dis = disX + disY;
         if (dis <= player->Movement) {
-            if (grid[SelectorposX][SelectorposY]->pPawn == nullptr) { //if position is not the same as player or monster
+            if (grid[SelectorposX][SelectorposY]->isWalkable == true) {
                 Level::move(player, SelectorposX, SelectorposY, dis);
             }
             UpdateGrid();
@@ -300,6 +282,60 @@ bool Level::setRandomPosition(Pawn* pPawn) {
     }
 }
 
+void Level::calculateWalkableAndAttackable() {
+
+
+    for (int y = 0; y < GridSizeY; ++y) {
+        for (int x = 0; x < GridSizeX; ++x) {
+            grid[x][y]->isWalkable = false;
+            grid[x][y]->isAttackable = false;
+        }
+    }
+
+    int directionX[] = { 0, 0, -1, 1 };
+    int directionY[] = { -1, 1, 0, 0 };
+    std::queue<std::pair<int, int>> bfsQueue;
+    std::vector<std::vector<int>> distance(GridSizeX, std::vector<int>(GridSizeY, -1));
+
+    // Start BFS from player's position
+    bfsQueue.push({ player->posX, player->posY });
+    distance[player->posX][player->posY] = 0;
+    grid[player->posX][player->posY]->isWalkable = false;
+
+    while (!bfsQueue.empty()) {
+        std::pair<int, int> currentPos = bfsQueue.front(); // Explicitly declare the type
+        int currentX = currentPos.first;
+        int currentY = currentPos.second;
+        bfsQueue.pop();
+
+        int currentDistance = distance[currentX][currentY];
+
+        // If we are at the maximum movement distance, stop expanding
+        if (currentDistance >= player->Movement) continue;
+
+        // Check all 4 adjacent directions (up, down, left, right)
+        for (int i = 0; i < 4; ++i) {
+            int nextX = currentX + directionX[i];
+            int nextY = currentY + directionY[i];
+
+            // Check if the next position is within bounds
+            if (nextX >= 0 && nextX < GridSizeX && nextY >= 0 && nextY < GridSizeY) {
+                // If the cell hasn't been visited yet and is empty, continue BFS
+                if (distance[nextX][nextY] == -1 && grid[nextX][nextY]->pPawn == nullptr) {
+                    distance[nextX][nextY] = currentDistance + 1;
+                    grid[nextX][nextY]->isWalkable = true;
+                    bfsQueue.push({ nextX, nextY });
+                }
+
+                // Mark adjacent monsters as attackable if within the attack range
+                if (grid[nextX][nextY]->pPawn != nullptr && grid[nextX][nextY]->pPawn->isMonster() && !grid[nextX][nextY]->pPawn->m_dead) {
+                    grid[nextX][nextY]->isAttackable = true;
+                }
+            }
+        }
+    }
+}
+
 void Level::move(Pawn* pawn, int x, int y, int dis) {
     
      pawn->Movement -= dis;
@@ -331,6 +367,17 @@ void Level::attack(Pawn* origin, Pawn* target) {
     origin->Movement = 0;
     if (target->HP <= 0) {
         target->m_dead = true;
+        if (target->isGolem() == true) { //golem was killed
+            player->Atk++;
+        }
+        if (target->isSpectre() == true) { //Spectre was killed
+            player->HP = 3;
+        }
+        if (target->isFaucheur() == true) { //Faucheur was killed
+            for (int i = 0; i < Monsters.size(); i++) {
+                Monsters[i]->HP -= 2;
+            }
+        }
         //log killed
         Log(target->name + " got killed");
     }
