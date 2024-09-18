@@ -1,6 +1,7 @@
 #ifndef Pawn_hpp
 #define Pawn_hpp
 
+#include <string>
 
 
 class Pawn
@@ -14,6 +15,8 @@ public:
 
 	int HP;
 	int Atk;
+
+	std::string name;
 
 	bool m_dead = false;
 

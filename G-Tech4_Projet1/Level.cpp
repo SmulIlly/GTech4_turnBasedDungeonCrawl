@@ -121,6 +121,27 @@ void Level::UpdateGrid()
     system("cls");
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     int k;
+    std::string ActionType("Move");
+
+    if (grid[SelectorposX][SelectorposY]->pPawn != nullptr) // HUD des stat du monstre selectioner
+    {
+        if (grid[SelectorposX][SelectorposY]->pPawn->isMonster() == true)
+        {
+            ActionType = "Attack";
+            Pawn* EnemySelected = grid[SelectorposX][SelectorposY]->pPawn;
+            std::cout<< grid[SelectorposX][SelectorposY]->pPawn->name << " :" << "   HP : " << grid[SelectorposX][SelectorposY]->pPawn->HP << "   ATK : " << grid[SelectorposX][SelectorposY]->pPawn->Atk << std::endl << std::endl;
+        }
+        else
+        {
+            std::cout << grid[SelectorposX][SelectorposY]->pPawn->name << std::endl << std::endl;
+        }
+    }
+    else
+    {
+        std::cout << "Empty" << std::endl << std::endl;
+    }
+
+
 
     for (int y = 0; y < GridSizeY; ++y)
     {
@@ -161,6 +182,11 @@ void Level::UpdateGrid()
         SetConsoleTextAttribute(hConsole, k);
         std::cout << std::endl;
     }
+
+    std::cout  // affichage des stat du joueur
+        << " " << player->name << " :" << "                 Controlle :" << std::endl
+        << "  - HP  = " << player->HP  << "                       [SPACE]:  " << ActionType << std::endl
+        << "  - ATK = " << player->Atk << "                       [ESCAPE]: Pass Turn";
 }
 
 void Level::InputUpdate()
@@ -249,7 +275,7 @@ void Level::move(Pawn* pawn, int x, int y, int dis) {
      grid[pawn->posX][pawn->posY]->pPawn = nullptr;
      pawn->posX = x;
      pawn->posY = y;
-     grid[player->posX][player->posY]->pPawn = player;
+     grid[pawn->posX][pawn->posY]->pPawn = pawn;
 }
 
 void Level::attack(Pawn* origin, Pawn* target) {
@@ -277,25 +303,29 @@ void Level::ennemyTurn() {
         //Monster specific behaviour
         if (Monsters[i]->isFaucheur() == true) {
             //avancer vers joueur
-            for (Monsters[i]->Movement; Monsters[i]->Movement > 0; Monsters[i]->Movement--) {
+            for (Monsters[i]->Movement; Monsters[i]->Movement > 0; /*Monsters[i]->Movement--*/) {
                 if (dis > 1) {
                     if (disX >= disY) {
                         if (Monsters[i]->posX > player->posX) {
-                            Monsters[i]->posX -= 1;
+                            int newpos = Monsters[i]->posX -1;
+                            move(Monsters[i], newpos, Monsters[i]->posY, 1);
                          
                         }
                         if (Monsters[i]->posX < player->posX) {
-                            Monsters[i]->posX += 1;
+                            int newpos = Monsters[i]->posX + 1;
+                            move(Monsters[i], newpos, Monsters[i]->posY, 1);
                          
                         }
                     }
                     else {
                         if (Monsters[i]->posY > player->posY) {
-                            Monsters[i]->posY -= 1;
+                            int newpos = Monsters[i]->posY - 1;
+                            move(Monsters[i], Monsters[i]->posX, newpos, 1);
                         
                         }
                         if (Monsters[i]->posY < player->posY) {
-                            Monsters[i]->posY += 1;
+                            int newpos = Monsters[i]->posY + 1;
+                            move(Monsters[i], Monsters[i]->posX, newpos, 1);
                             
                         }
                     }
@@ -310,21 +340,25 @@ void Level::ennemyTurn() {
                     if (disX >= disY) {
                         if (Monsters[i]->posX < GridSizeX-1 && Monsters[i]->posX >0) {
                             if (Monsters[i]->posX > player->posX) {
-                                Monsters[i]->posX += 1;
+                                int newpos = Monsters[i]->posX + 1;
+                                move(Monsters[i], newpos, Monsters[i]->posY, 1);
                             }
                             if (Monsters[i]->posX < player->posX) {
-                                Monsters[i]->posX -= 1;
+                                int newpos = Monsters[i]->posX - 1;
+                                move(Monsters[i], newpos, Monsters[i]->posY, 1);
                             }
                         }
                     }
                     else {
                         if (Monsters[i]->posY < GridSizeY-1 && Monsters[i]->posY >0) {
                             if (Monsters[i]->posY > player->posY) {
-                                Monsters[i]->posY += 1;
+                                int newpos = Monsters[i]->posY + 1;
+                                move(Monsters[i], Monsters[i]->posX, newpos, 1);
                                 
                             }
                             if (Monsters[i]->posY < player->posY) {
-                                Monsters[i]->posY -= 1;
+                                int newpos = Monsters[i]->posY - 1;
+                                move(Monsters[i], Monsters[i]->posX, newpos, 1);
                             }
                         }
                     }
