@@ -119,6 +119,26 @@ void Level::UpdateGrid()
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     int k;
 
+
+    if (grid[SelectorposX][SelectorposY]->pPawn != nullptr) // HUD des stat du monstre selectioner
+    {
+        if (grid[SelectorposX][SelectorposY]->pPawn->isMonster() == true)
+        {
+            Pawn* EnemySelected = grid[SelectorposX][SelectorposY]->pPawn;
+            std::cout<< grid[SelectorposX][SelectorposY]->pPawn->name << " :" << "   HP : " << grid[SelectorposX][SelectorposY]->pPawn->HP << "   ATK : " << grid[SelectorposX][SelectorposY]->pPawn->Atk << std::endl << std::endl;
+        }
+        else
+        {
+            std::cout << std::endl << std::endl;
+        }
+    }
+    else
+    {
+        std::cout << std::endl << std::endl;
+    }
+
+
+
     for (int y = 0; y < GridSizeY; ++y)
     {
         for (int x = 0; x < GridSizeX; ++x)
@@ -158,6 +178,11 @@ void Level::UpdateGrid()
         SetConsoleTextAttribute(hConsole, k);
         std::cout << std::endl;
     }
+
+    std::cout  // affichage des stat du joueur
+        << " " << player->name << " :" << std::endl
+        << "  - HP  = " << player->HP << std::endl
+        << "  - ATK = " << player->Atk;
 }
 
 void Level::InputUpdate()

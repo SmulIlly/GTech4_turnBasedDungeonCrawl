@@ -5,7 +5,7 @@
 #include "Faucheur.h"
 
 
-Pawn::Pawn() : HP(0), Atk(0), maxMovement(0), Movement(0), posX(0), posY(0)
+Pawn::Pawn() : HP(0), Atk(0), maxMovement(0), Movement(0), posX(0), posY(0), name("")
 {
 
 }
@@ -20,6 +20,7 @@ Pawn* Pawn::Constructor(int id) {
 		Player* newObj = new Player;
 		newObj->HP = 3;
 		newObj->Atk = 1;
+		newObj->name = "Player";
 		return newObj;
 	}
 	if (id == 2) { //golem
@@ -27,6 +28,7 @@ Pawn* Pawn::Constructor(int id) {
 		newObj->maxMovement = 0;
 		newObj->HP = 2;
 		newObj->Atk = 2;
+		newObj->name = "Golem";
 		return newObj;
 	}
 	if (id == 3) { //spectre
@@ -34,6 +36,7 @@ Pawn* Pawn::Constructor(int id) {
 		newObj->maxMovement = 1;
 		newObj->HP = 1;
 		newObj->Atk = 1;
+		newObj->name = "Spectre";
 		return newObj;
 	}
 	if (id == 4) { //faucheur
@@ -41,6 +44,7 @@ Pawn* Pawn::Constructor(int id) {
 		newObj->maxMovement = 1;
 		newObj->HP = 5;
 		newObj->Atk = 3;
+		newObj->name = "Faucheur";
 		return newObj;
 	}
 	else {
