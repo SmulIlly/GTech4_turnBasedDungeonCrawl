@@ -35,17 +35,6 @@ void Game::Run()
 		std::cout << "je ne trouve pas le fichier text de la map";
 	}
 
-	/*{
-		"---G-----G--",
-		"---G--@-G---",
-		"GGG----GG---",
-		"----G-------",
-		"GG-G-----GGG",
-		"---G----G---",
-
-
-	};*/
-
 	int GridSizeY = map.size();
 	int GridSizeX = map[0].length();
 
