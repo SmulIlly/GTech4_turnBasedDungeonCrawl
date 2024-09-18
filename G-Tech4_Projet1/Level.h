@@ -8,6 +8,7 @@
 #include <vector>
 #include <string>
 
+
 class Level
 {
 public:
@@ -25,6 +26,7 @@ public:
     void InputUpdate();
     void endTurn();
     bool setRandomPosition(Pawn* pPawn);
+    void calculateWalkableAndAttackable();
     void move(Pawn* Pawn, int x, int y, int dis);
     void attack(Pawn* origin, Pawn* target);
     void ennemyTurn();
@@ -40,6 +42,7 @@ protected:
     int SelectorposX;
     int SelectorposY;
     bool inputFlag;
+
 };
 
 #endif // LEVEL_H

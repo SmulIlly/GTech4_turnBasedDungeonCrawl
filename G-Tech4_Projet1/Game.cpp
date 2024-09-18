@@ -3,9 +3,7 @@
 #include "Input.h"
 #include "Keyboard.h"
 
-
-#include <string>
-#include <fstream>
+#include <string>;
 #include <iostream>
 #include <vector>
 
@@ -20,25 +18,17 @@ Game::~Game()
 
 void Game::Run()
 {
-	std::vector<std::string> map;
-
-	std::ifstream MapText;
-
-	std::ifstream MapFolder("C:/Users/bdaniel/Documents/GitHub/GTech4_turnBasedDungeonCrawl/Map/Map1.txt");
-	std::string Ligne;
-
-	if (MapFolder)
+	std::vector<std::string> map =
 	{
-		while (std::getline(MapFolder, Ligne))
-		{
-			map.push_back(Ligne);
-		}
-	}
-	else
-	{
-		std::cout << "Je ne trouve pas le fichier";
-	}
+		"---G-----G--",
+		"---G--@-G---",
+		"GGG----GG---",
+		"----G-------",
+		"GG-G-----GGG",
+		"---G----G---",
 
+
+	};
 
 	int GridSizeY = map.size();
 	int GridSizeX = map[0].length();
