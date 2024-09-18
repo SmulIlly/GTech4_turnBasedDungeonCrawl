@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|solutionrelative:G-Tech4_Projet1\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Level.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|solutionrelative:G-Tech4_Projet1\\Level.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Level.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|solutionrelative:G-Tech4_Projet1\\Level.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Level.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|solutionrelative:G-Tech4_Projet1\\Level.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|solutionrelative:G-Tech4_Projet1\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{68E2ED6C-7FB9-46F6-9526-21B52D89BAF3}|G-Tech4_Projet1\\G-Tech4_Projet1.vcxproj|C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -58,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Document",
@@ -154,8 +154,7 @@
               "RelativeToolTip": "G-Tech4_Projet1\\main.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-17T08:31:40.678Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-17T08:31:40.678Z"
             },
             {
               "$type": "Document",
@@ -167,18 +166,17 @@
               "RelativeToolTip": "G-Tech4_Projet1\\Game.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-17T08:29:35.333Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-17T08:29:35.333Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Game.cpp",
               "DocumentMoniker": "C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Game.cpp",
               "RelativeDocumentMoniker": "G-Tech4_Projet1\\Game.cpp",
               "ToolTip": "C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Game.cpp",
               "RelativeToolTip": "G-Tech4_Projet1\\Game.cpp",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABcAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAABcAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-17T08:29:19.491Z",
               "EditorCaption": ""
@@ -191,20 +189,20 @@
               "RelativeDocumentMoniker": "G-Tech4_Projet1\\Level.h",
               "ToolTip": "C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Level.h",
               "RelativeToolTip": "G-Tech4_Projet1\\Level.h",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACMAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA4AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-09-17T07:56:42.959Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Level.cpp",
               "DocumentMoniker": "C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Level.cpp",
               "RelativeDocumentMoniker": "G-Tech4_Projet1\\Level.cpp",
               "ToolTip": "C:\\Users\\ewallis\\Documents\\GitHub\\GTech4_turnBasedDungeonCrawl\\G-Tech4_Projet1\\Level.cpp",
               "RelativeToolTip": "G-Tech4_Projet1\\Level.cpp",
-              "ViewState": "AgIAADcAAAAAAAAAAAAwwFgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACwAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-17T07:56:45.925Z",
               "EditorCaption": ""

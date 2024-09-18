@@ -45,6 +45,8 @@ void Level::initialize()
     player->posY = GridSizeY/2;
     player->maxMovement = 3;
     player->Movement = player->maxMovement;
+    player->HP = 3;
+    player->m_dead = false;
 
 
     for (int y = 0; y < GridSizeY; y++) {
@@ -143,7 +145,7 @@ void Level::UpdateGrid()
         }
     }
     if (player->m_dead == true) {
-        //GAME OVER / RESET
+        GameOver();
     }
 
     // Affichage
@@ -426,9 +428,23 @@ void Level::Log(std::string log) {
 }
 
 void Level::GameOver() {
-
+    Reset();
 }
 
 void Level::Reset() {
+    for (auto& monster : Monsters) {
+        delete monster;
+    }
+    Monsters.clear();
 
+    for (auto& row : grid) {
+        for (auto& tile : row) {
+            delete tile;
+        }
+    }
+    grid.clear();
+
+    Logs.clear();
+
+    initialize();
 }
