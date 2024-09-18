@@ -3,7 +3,8 @@
 #include "Input.h"
 #include "Keyboard.h"
 
-#include <string>;
+#include <string>
+#include <fstream>
 #include <iostream>
 #include <vector>
 
@@ -18,9 +19,21 @@ Game::~Game()
 
 void Game::Run()
 {
+	std::ifstream MapFolder("C:/Users/bdaniel/Desktop/Map1.txt");
+	std::string Ligne;
+
+	if(MapFolder)
+	{
+		std::getline(MapFolder, Ligne);
+	}
+	else
+	{
+		std::cout << "Je ne trouve pas le fichier";
+	}
+
 	std::vector<std::string> map =
 	{
-		"-------------",
+		Ligne,
 		"------@-S----",
 		"-------------",
 		"------------G",
