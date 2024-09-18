@@ -19,29 +19,23 @@ Game::~Game()
 
 void Game::Run()
 {
+	std::vector<std::string> map;
+
 	std::ifstream MapFolder("C:/Users/bdaniel/Desktop/Map1.txt");
 	std::string Ligne;
 
-	if(MapFolder)
+	if (MapFolder)
 	{
-		std::getline(MapFolder, Ligne);
+		while (std::getline(MapFolder, Ligne))
+		{
+			map.push_back(Ligne);
+		}
 	}
 	else
 	{
 		std::cout << "Je ne trouve pas le fichier";
 	}
 
-	std::vector<std::string> map =
-	{
-		Ligne,
-		"------@-S----",
-		"-------------",
-		"------------G",
-		"-----------G-",
-		"F---------G--",
-
-
-	};
 
 	int GridSizeY = map.size();
 	int GridSizeX = map[0].length();
