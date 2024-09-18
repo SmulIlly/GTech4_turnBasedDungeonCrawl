@@ -118,23 +118,24 @@ void Level::UpdateGrid()
     system("cls");
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     int k;
-
+    std::string ActionType("Move");
 
     if (grid[SelectorposX][SelectorposY]->pPawn != nullptr) // HUD des stat du monstre selectioner
     {
         if (grid[SelectorposX][SelectorposY]->pPawn->isMonster() == true)
         {
+            ActionType = "Attack";
             Pawn* EnemySelected = grid[SelectorposX][SelectorposY]->pPawn;
             std::cout<< grid[SelectorposX][SelectorposY]->pPawn->name << " :" << "   HP : " << grid[SelectorposX][SelectorposY]->pPawn->HP << "   ATK : " << grid[SelectorposX][SelectorposY]->pPawn->Atk << std::endl << std::endl;
         }
         else
         {
-            std::cout << std::endl << std::endl;
+            std::cout << grid[SelectorposX][SelectorposY]->pPawn->name << std::endl << std::endl;
         }
     }
     else
     {
-        std::cout << std::endl << std::endl;
+        std::cout << "Empty" << std::endl << std::endl;
     }
 
 
@@ -180,9 +181,9 @@ void Level::UpdateGrid()
     }
 
     std::cout  // affichage des stat du joueur
-        << " " << player->name << " :" << std::endl
-        << "  - HP  = " << player->HP << std::endl
-        << "  - ATK = " << player->Atk;
+        << " " << player->name << " :" << "                 Controlle :" << std::endl
+        << "  - HP  = " << player->HP  << "                       [SPACE]:  " << ActionType << std::endl
+        << "  - ATK = " << player->Atk << "                       [ESCAPE]: Pass Turn";
 }
 
 void Level::InputUpdate()
