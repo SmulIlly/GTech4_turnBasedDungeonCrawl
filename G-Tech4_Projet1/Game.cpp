@@ -19,7 +19,23 @@ Game::~Game()
 
 void Game::Run()
 {
-	std::vector<std::string> map;
+
+	std::vector<std::string> map =
+	{
+		"---G-----G--",
+		"---G--@-G---",
+		"GGG----GG---",
+		"----G-------",
+		"GG-G-----GGG",
+		"---G----G---",
+
+
+	};
+
+
+
+	//NE PAS PUSH SUR MAIN UN CHANGEMENT QUE JE PPEUX PAS UTILISER
+	/*std::vector<std::string> map;
 	std::string Line;
 	std::ifstream MapText("C:/Users/bdaniel/Documents/GitHub/GTech4_turnBasedDungeonCrawl/Map/Map1.txt");
 
@@ -33,7 +49,7 @@ void Game::Run()
 	else
 	{
 		std::cout << "je ne trouve pas le fichier text de la map";
-	}
+	} */
 
 	int GridSizeY = map.size();
 	int GridSizeX = map[0].length();
