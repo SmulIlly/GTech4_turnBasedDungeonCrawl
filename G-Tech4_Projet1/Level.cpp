@@ -279,9 +279,29 @@ void Level::move(Pawn* pawn, int x, int y, int dis) {
 }
 
 void Level::attack(Pawn* origin, Pawn* target) {
-    target->HP -= origin->Atk;
+    if (target->isGolem() == false) {
+        target->HP -= origin->Atk;
+        //log attack
+        Log(origin->name + " attacked " + target->name + " for " + std::to_string(origin->Atk) + " damage!");
+    }
+    else {
+        int save = rand() % 2;
+        if (save == 0) {
+            target->HP -= origin->Atk;
+            //log attack
+            Log(origin->name + " attacked " + target->name + " for " + std::to_string(origin->Atk) + " damage!");
+        }
+        else {
+            //log save
+            Log(origin->name + " attacked " + target->name + " but Golem blocked it");
+        }
+    }
+
+    origin->Movement = 0;
     if (target->HP <= 0) {
         target->m_dead = true;
+        //log killed
+        Log(target->name + " got killed");
     }
 
     if (origin == player) {
@@ -370,4 +390,8 @@ void Level::ennemyTurn() {
         }
 
     }
+}
+
+void Level::Log(std::string log) {
+    Logs.push_back(log);
 }

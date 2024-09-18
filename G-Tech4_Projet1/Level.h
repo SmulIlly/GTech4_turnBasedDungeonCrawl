@@ -6,6 +6,7 @@
 #include "Input.h"
 #include "Monster.h"
 #include <vector>
+#include <string>
 
 class Level
 {
@@ -13,6 +14,7 @@ public:
     Pawn* player;
     std::vector<Pawn*> Monsters;
     std::vector<std::vector<Tile*>> grid;
+    std::vector<std::string> Logs;
 
     Level(int gridSizeX, int gridSizeY);
     ~Level();
@@ -25,6 +27,7 @@ public:
     void move(Pawn* Pawn, int x, int y, int dis);
     void attack(Pawn* origin, Pawn* target);
     void ennemyTurn();
+    void Log(std::string log);
 
 protected:
     int GridSizeX;
