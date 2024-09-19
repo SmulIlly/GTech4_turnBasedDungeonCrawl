@@ -424,30 +424,97 @@ void Level::ennemyTurn() {
             while (Monsters[i]->Movement > 0) {
                 bool moved = false;
                 if (dis > 1) {
-                    if (disX >= disY) {
-                        
-                            if (Monsters[i]->posX >= player->posX) {
-                                move(Monsters[i], Monsters[i]->posX - 1, Monsters[i]->posY, 1);
-                                moved = true;
+                    int dirX = 0;
+                    int dirY = 0;
+                    int newDisX;
+                    int newDisY;
+                    int newDis;
+                    int currentDis = 100;
+                    if (Monsters[i]->posX != 0) {
+                        if (grid[Monsters[i]->posX - 1][Monsters[i]->posY]->pPawn == nullptr) {
+                            newDisX = std::abs((Monsters[i]->posX - 1) - player->posX);
+                            newDisY = std::abs((Monsters[i]->posY) - player->posY);
+                            newDis = newDisX + newDisY;
+
+                            if (newDis < currentDis) {
+                                currentDis = newDis;
+                                dirX = -1;
+                                dirY = 0;
                             }
-                            else if (Monsters[i]->posX < player->posX) {
-                                move(Monsters[i], Monsters[i]->posX + 1, Monsters[i]->posY, 1);
-                                moved = true;
+                            if (newDis == currentDis) {
+                                if (disX > disY) {
+                                    currentDis = newDis;
+                                    dirX = -1;
+                                    dirY = 0;
+                                }
                             }
-                        
+
+                        }
                     }
-                    else if (disY > disX) {
-                        
-                            if (Monsters[i]->posY > player->posY) {
-                                move(Monsters[i], Monsters[i]->posX, Monsters[i]->posY - 1, 1);
-                                moved = true;
+                    if (Monsters[i]->posX != GridSizeX -1) {
+                        if (grid[Monsters[i]->posX + 1][Monsters[i]->posY]->pPawn == nullptr) {
+                            newDisX = std::abs((Monsters[i]->posX + 1) - player->posX);
+                            newDisY = std::abs((Monsters[i]->posY) - player->posY);
+                            newDis = newDisX + newDisY;
+
+                            if (newDis < currentDis) {
+                                currentDis = newDis;
+                                dirX = 1;
+                                dirY = 0;
                             }
-                            else if (Monsters[i]->posY < player->posY) {
-                                move(Monsters[i], Monsters[i]->posX, Monsters[i]->posY + 1, 1);
-                                moved = true;
+                            if (newDis == currentDis) {
+                                if (disX > disY) {
+                                    currentDis = newDis;
+                                    dirX = 1;
+                                    dirY = 0;
+                                }
                             }
-                        
+
+                        }
                     }
+                    if (Monsters[i]->posY != 0) {
+                        if (grid[Monsters[i]->posX][Monsters[i]->posY - 1]->pPawn == nullptr) {
+                            newDisX = std::abs((Monsters[i]->posX) - player->posX);
+                            newDisY = std::abs((Monsters[i]->posY - 1) - player->posY);
+                            newDis = newDisX + newDisY;
+
+                            if (newDis < currentDis) {
+                                currentDis = newDis;
+                                dirX = 0;
+                                dirY = -1;
+                            }
+                            if (newDis == currentDis) {
+                                if (disY > disX) {
+                                    currentDis = newDis;
+                                    dirX = 0;
+                                    dirY = -1;
+                                }
+                            }
+                        }
+                    }
+                    if (Monsters[i]->posY != GridSizeY-1) {
+                        if (grid[Monsters[i]->posX][Monsters[i]->posY + 1]->pPawn == nullptr) {
+                            newDisX = std::abs((Monsters[i]->posX) - player->posX);
+                            newDisY = std::abs((Monsters[i]->posY + 1) - player->posY);
+                            newDis = newDisX + newDisY;
+
+                            if (newDis < currentDis) {
+                                currentDis = newDis;
+                                dirX = 0;
+                                dirY = 1;
+                            }
+                            if (newDis == currentDis) {
+                                if (disY > disX) {
+                                    currentDis = newDis;
+                                    dirX = 0;
+                                    dirY = 1;
+                                }
+                            }
+
+                        }
+                    }
+                    move(Monsters[i], Monsters[i]->posX + dirX, Monsters[i]->posY + dirY, 1);
+                    moved = true;
 
                     // Update distance
                     disX = std::abs(Monsters[i]->posX - player->posX);
@@ -467,30 +534,97 @@ void Level::ennemyTurn() {
             while (Monsters[i]->Movement > 0) {
                 bool moved = false;
                 if (dis > 1) {
-                    if (disX >= disY || Monsters[i]->posY == GridSizeY - 1 || Monsters[i]->posY == 0) {
-                        if (Monsters[i]->posX < GridSizeX - 1 && Monsters[i]->posX > 0) {
-                            if (Monsters[i]->posX >= player->posX) {
-                                move(Monsters[i], Monsters[i]->posX + 1, Monsters[i]->posY, 1);
-                                moved = true;
+                    int dirX = 0;
+                    int dirY = 0;
+                    int newDisX;
+                    int newDisY;
+                    int newDis;
+                    int currentDis = dis;
+                    if (Monsters[i]->posX != 0) {
+                        if (grid[Monsters[i]->posX - 1][Monsters[i]->posY]->pPawn == nullptr) {
+                            newDisX = std::abs((Monsters[i]->posX - 1) - player->posX);
+                            newDisY = std::abs((Monsters[i]->posY) - player->posY);
+                            newDis = newDisX + newDisY;
+
+                            if (newDis > currentDis) {
+                                currentDis = newDis;
+                                dirX = -1;
+                                dirY = 0;
                             }
-                            else if (Monsters[i]->posX < player->posX) {
-                                move(Monsters[i], Monsters[i]->posX - 1, Monsters[i]->posY, 1);
-                                moved = true;
+                            if (newDis == currentDis) {
+                                if (disX > disY) {
+                                    currentDis = newDis;
+                                    dirX = -1;
+                                    dirY = 0;
+                                }
+                            }
+
+                        }
+                    }
+                    if (Monsters[i]->posX != GridSizeX - 1) {
+                        if (grid[Monsters[i]->posX + 1][Monsters[i]->posY]->pPawn == nullptr) {
+                            newDisX = std::abs((Monsters[i]->posX + 1) - player->posX);
+                            newDisY = std::abs((Monsters[i]->posY) - player->posY);
+                            newDis = newDisX + newDisY;
+
+                            if (newDis > currentDis) {
+                                currentDis = newDis;
+                                dirX = 1;
+                                dirY = 0;
+                            }
+                            if (newDis == currentDis) {
+                                if (disX > disY) {
+                                    currentDis = newDis;
+                                    dirX = 1;
+                                    dirY = 0;
+                                }
+                            }
+
+                        }
+                    }
+                    if (Monsters[i]->posY != 0) {
+                        if (grid[Monsters[i]->posX][Monsters[i]->posY - 1]->pPawn == nullptr) {
+                            newDisX = std::abs((Monsters[i]->posX) - player->posX);
+                            newDisY = std::abs((Monsters[i]->posY - 1) - player->posY);
+                            newDis = newDisX + newDisY;
+
+                            if (newDis > currentDis) {
+                                currentDis = newDis;
+                                dirX = 0;
+                                dirY = -1;
+                            }
+                            if (newDis == currentDis) {
+                                if (disY > disX) {
+                                    currentDis = newDis;
+                                    dirX = 0;
+                                    dirY = -1;
+                                }
                             }
                         }
                     }
-                    else if (disY > disX || Monsters[i]->posX == GridSizeX - 1 || Monsters[i]->posX == 0) {
-                        if (Monsters[i]->posY < GridSizeY - 1 && Monsters[i]->posY > 0) {
-                            if (Monsters[i]->posY > player->posY) {
-                                move(Monsters[i], Monsters[i]->posX, Monsters[i]->posY + 1, 1);
-                                moved = true;
+                    if (Monsters[i]->posY != GridSizeY - 1) {
+                        if (grid[Monsters[i]->posX][Monsters[i]->posY + 1]->pPawn == nullptr) {
+                            newDisX = std::abs((Monsters[i]->posX) - player->posX);
+                            newDisY = std::abs((Monsters[i]->posY + 1) - player->posY);
+                            newDis = newDisX + newDisY;
+
+                            if (newDis > currentDis) {
+                                currentDis = newDis;
+                                dirX = 0;
+                                dirY = 1;
                             }
-                            else if (Monsters[i]->posY < player->posY) {
-                                move(Monsters[i], Monsters[i]->posX, Monsters[i]->posY - 1, 1);
-                                moved = true;
+                            if (newDis == currentDis) {
+                                if (disY > disX) {
+                                    currentDis = newDis;
+                                    dirX = 0;
+                                    dirY = 1;
+                                }
                             }
+
                         }
                     }
+                    move(Monsters[i], Monsters[i]->posX + dirX, Monsters[i]->posY + dirY, 1);
+                    moved = true;
 
                     // Update distance
                     disX = std::abs(Monsters[i]->posX - player->posX);
