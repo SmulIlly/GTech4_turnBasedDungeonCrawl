@@ -130,8 +130,6 @@
     <ClInclude Include="Faucheur.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Golem.h" />
-    <ClInclude Include="Input.h" />
-    <ClInclude Include="KeyBoard.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="Pawn.h" />
@@ -143,8 +141,6 @@
     <ClCompile Include="Faucheur.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Golem.cpp" />
-    <ClCompile Include="Input.cpp" />
-    <ClCompile Include="KeyBoard.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Monster.cpp" />
