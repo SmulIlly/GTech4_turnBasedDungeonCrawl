@@ -49,6 +49,7 @@ void Level::initialize()
     player->maxMovement = 3;
     player->Movement = player->maxMovement;
     player->HP = 3;
+    player->Atk = 1;
     player->m_dead = false;
 
 
@@ -118,6 +119,10 @@ void Level::UpdateGrid()
     calculateWalkableAndAttackable();
 
 
+    if (player->HP <= 0) {
+        player->m_dead = true;
+    }
+
     //check dead
     for (int y = 0; y < GridSizeY; ++y)
     {
@@ -129,8 +134,11 @@ void Level::UpdateGrid()
             }
         }
     }
-    if (player->m_dead == true) {
+    if (Monsters.size() == 0) {
         GameOver();
+    }
+    if (player->m_dead == true) {
+        //GameOver();
     }
 
     // Affichage
@@ -157,7 +165,7 @@ void Level::UpdateGrid()
         std::cout << "Empty" << std::endl << std::endl;
     }
 
-
+    std::cout << "------------------------------------------------------------" << std::endl << std::endl;
 
     for (int y = 0; y < GridSizeY; ++y)
     {
@@ -201,6 +209,7 @@ void Level::UpdateGrid()
         SetConsoleTextAttribute(hConsole, k);
         std::cout << std::endl;
     }
+    std::cout << "------------------------------------------------------------" << std::endl << std::endl;
 
     std::cout  // affichage des stat du joueur
         << " " << player->name << " :" << "                 Controlle :" << std::endl
@@ -362,11 +371,13 @@ void Level::move(Pawn* pawn, int x, int y, int dis) {
     grid[pawn->posX][pawn->posY]->pPawn = pawn;
 
     if (pawn->isMonster()) {
-        grid[x][y]->isColored = true;
+        //debugTileColor(grid[x][y]);
     }
 }
 
 void Level::attack(Pawn* origin, Pawn* target) {
+    origin->Movement = 0;
+
     if (target->isGolem() == false) {
         target->HP -= origin->Atk;
         //log attack
@@ -385,7 +396,7 @@ void Level::attack(Pawn* origin, Pawn* target) {
         }
     }
 
-    origin->Movement = 0;
+
     if (target->HP <= 0) {
         target->m_dead = true;
         if (target->isGolem() == true) { //golem was killed
@@ -397,6 +408,9 @@ void Level::attack(Pawn* origin, Pawn* target) {
         if (target->isFaucheur() == true) { //Faucheur was killed
             for (int i = 0; i < Monsters.size(); i++) {
                 Monsters[i]->HP -= 2;
+                if (Monsters[i]->HP <= 0) {
+                    Monsters[i]->m_dead = true;
+                }
             }
         }
         //log killed
@@ -406,7 +420,7 @@ void Level::attack(Pawn* origin, Pawn* target) {
     if (origin == player) {
         endTurn();
     }
-    
+
 }
 
 void Level::ennemyTurn() {
