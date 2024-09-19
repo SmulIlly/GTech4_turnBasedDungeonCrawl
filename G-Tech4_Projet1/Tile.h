@@ -9,6 +9,7 @@ public:
     Pawn* pPawn;
     bool isWalkable;
     bool isAttackable;
+    bool isColored;
 
     Tile();
     ~Tile();
