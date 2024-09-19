@@ -4,6 +4,7 @@
 #include <windows.h>
 #include <queue>
 #include "Level.h"
+#include <sstream>
 
 // Définition des codes des touches
 #define UP 72
@@ -89,6 +90,7 @@ void Level::initialize()
         }
     }
 
+    Log("------  Game Start  -----");
 
     UpdateGrid();
 }
@@ -199,7 +201,24 @@ void Level::UpdateGrid()
     std::cout  // affichage des stat du joueur
         << " " << player->name << " :" << "                 Controlle :" << std::endl
         << "  - HP  = " << player->HP  << "                       [SPACE]:  " << ActionType << std::endl
-        << "  - ATK = " << player->Atk << "                       [ESCAPE]: Pass Turn";
+        << "  - ATK = " << player->Atk << "                       [ESCAPE]: Pass Turn" << std::endl << std::endl
+        << "Logs : " << std::endl << std::endl;
+
+    if (Logs.size() > 0) {
+        int LogSize = Logs.size();
+
+        for (int i = 0; i < 6; i++)
+        {
+            if(LogSize-i > 0 && (LogSize-i) < Logs.size())
+            {
+                std::cout << Logs[(LogSize - i)] << std::endl;
+            }
+            else if(LogSize-i == 0)
+            {
+                std::cout << Logs[0] << std::endl;
+            }
+        }
+    }
 }
 
 void Level::InputUpdate()
