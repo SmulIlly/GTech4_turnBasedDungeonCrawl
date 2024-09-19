@@ -138,7 +138,7 @@ void Level::UpdateGrid()
         GameOver();
     }
     if (player->m_dead == true) {
-        //GameOver();
+        GameOver();
     }
 
     // Affichage

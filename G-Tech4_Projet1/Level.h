@@ -3,7 +3,6 @@
 
 #include "Tile.h"
 #include "Pawn.h"
-#include "Input.h"
 #include "Monster.h"
 #include <vector>
 #include <string>

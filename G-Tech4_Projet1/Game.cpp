@@ -1,8 +1,5 @@
 #include "Game.h"
 #include "Level.h"
-#include "Input.h"
-#include "Keyboard.h"
-
 #include <string>;
 #include <iostream>
 #include <vector>
