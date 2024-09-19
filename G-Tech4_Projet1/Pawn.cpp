@@ -33,7 +33,7 @@ Pawn* Pawn::Constructor(int id) {
 	}
 	if (id == 3) { //spectre
 		Spectre* newObj = new Spectre;
-		newObj->maxMovement = 1;
+		newObj->maxMovement = 2;
 		newObj->HP = 1;
 		newObj->Atk = 1;
 		newObj->name = "Spectre";

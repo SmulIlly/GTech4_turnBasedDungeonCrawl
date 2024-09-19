@@ -33,6 +33,7 @@ void Level::initialize()
     for (int i = 0; i < GridSizeX; ++i) {
         for (int y = 0; y < GridSizeY; ++y) {
             Tile* newTile = new Tile;
+            newTile->isColored == false;
             newTile->pPawn = nullptr;
             newTile->isWalkable = false;
             line.push_back(newTile);
@@ -167,6 +168,9 @@ void Level::UpdateGrid()
             if (grid[x][y]->isAttackable == true) {
                 k = 215;
             }
+            if (grid[x][y]->isColored == true) {
+                k = 12;
+            }
             if (y == SelectorposY && x == SelectorposX) {
                 k = 71; // Couleur ou attribut pour le sélecteur
             }
@@ -283,8 +287,6 @@ bool Level::setRandomPosition(Pawn* pPawn) {
 }
 
 void Level::calculateWalkableAndAttackable() {
-
-
     for (int y = 0; y < GridSizeY; ++y) {
         for (int x = 0; x < GridSizeX; ++x) {
             grid[x][y]->isWalkable = false;
@@ -303,15 +305,12 @@ void Level::calculateWalkableAndAttackable() {
     grid[player->posX][player->posY]->isWalkable = false;
 
     while (!bfsQueue.empty()) {
-        std::pair<int, int> currentPos = bfsQueue.front(); // Explicitly declare the type
+        std::pair<int, int> currentPos = bfsQueue.front();
         int currentX = currentPos.first;
         int currentY = currentPos.second;
         bfsQueue.pop();
 
         int currentDistance = distance[currentX][currentY];
-
-        // If we are at the maximum movement distance, stop expanding
-        if (currentDistance >= player->Movement) continue;
 
         // Check all 4 adjacent directions (up, down, left, right)
         for (int i = 0; i < 4; ++i) {
@@ -320,16 +319,16 @@ void Level::calculateWalkableAndAttackable() {
 
             // Check if the next position is within bounds
             if (nextX >= 0 && nextX < GridSizeX && nextY >= 0 && nextY < GridSizeY) {
-                // If the cell hasn't been visited yet and is empty, continue BFS
-                if (distance[nextX][nextY] == -1 && grid[nextX][nextY]->pPawn == nullptr) {
+                // Mark adjacent monsters as attackable if within attack range
+                if (grid[nextX][nextY]->pPawn != nullptr && grid[nextX][nextY]->pPawn->isMonster() && !grid[nextX][nextY]->pPawn->m_dead) {
+                    grid[nextX][nextY]->isAttackable = true;
+                }
+
+                // Check if the next position is walkable and within player's movement range
+                if (currentDistance < player->Movement && distance[nextX][nextY] == -1 && grid[nextX][nextY]->pPawn == nullptr) {
                     distance[nextX][nextY] = currentDistance + 1;
                     grid[nextX][nextY]->isWalkable = true;
                     bfsQueue.push({ nextX, nextY });
-                }
-
-                // Mark adjacent monsters as attackable if within the attack range
-                if (grid[nextX][nextY]->pPawn != nullptr && grid[nextX][nextY]->pPawn->isMonster() && !grid[nextX][nextY]->pPawn->m_dead) {
-                    grid[nextX][nextY]->isAttackable = true;
                 }
             }
         }
@@ -343,6 +342,10 @@ void Level::move(Pawn* pawn, int x, int y, int dis) {
      pawn->posX = x;
      pawn->posY = y;
      grid[pawn->posX][pawn->posY]->pPawn = pawn;
+
+     if (pawn->isMonster()) {
+         grid[x][y]->isColored = true;
+     }
 }
 
 void Level::attack(Pawn* origin, Pawn* target) {
@@ -403,7 +406,7 @@ void Level::ennemyTurn() {
             //avancer vers joueur
             for (Monsters[i]->Movement; Monsters[i]->Movement > 0; /*Monsters[i]->Movement--*/) {
                 if (dis > 1) {
-                    if (disX >= disY) {
+                    if (disX >= disY || Monsters[i]->posY == GridSizeY - 1 || Monsters[i]->posY == 0) {
                         if (Monsters[i]->posX > player->posX) {
                             int newpos = Monsters[i]->posX -1;
                             move(Monsters[i], newpos, Monsters[i]->posY, 1);
@@ -415,7 +418,7 @@ void Level::ennemyTurn() {
                          
                         }
                     }
-                    else {
+                    else if (disY >= disX || Monsters[i]->posX == GridSizeX - 1 || Monsters[i]->posX == 0) {
                         if (Monsters[i]->posY > player->posY) {
                             int newpos = Monsters[i]->posY - 1;
                             move(Monsters[i], Monsters[i]->posX, newpos, 1);
@@ -428,6 +431,9 @@ void Level::ennemyTurn() {
                         }
                     }
                 }
+                else {
+                    Monsters[i]->Movement--;
+                }
             }
         }
         if (Monsters[i]->isSpectre() == true) {
@@ -435,7 +441,7 @@ void Level::ennemyTurn() {
             
             for (Monsters[i]->Movement; Monsters[i]->Movement > 0; Monsters[i]->Movement--) {
                 if (dis > 1) {
-                    if (disX >= disY) {
+                    if (disX >= disY || Monsters[i]->posY == GridSizeY - 1 || Monsters[i]->posY == 0) {
                         if (Monsters[i]->posX < GridSizeX-1 && Monsters[i]->posX >0) {
                             if (Monsters[i]->posX > player->posX) {
                                 int newpos = Monsters[i]->posX + 1;
@@ -447,7 +453,7 @@ void Level::ennemyTurn() {
                             }
                         }
                     }
-                    else {
+                    else if (disY > disX || Monsters[i]->posX == GridSizeX - 1 || Monsters[i]->posX == 0) {
                         if (Monsters[i]->posY < GridSizeY-1 && Monsters[i]->posY >0) {
                             if (Monsters[i]->posY > player->posY) {
                                 int newpos = Monsters[i]->posY + 1;
@@ -461,6 +467,9 @@ void Level::ennemyTurn() {
                         }
                     }
 
+                }
+                else {
+                    Monsters[i]->Movement--;
                 }
                 
                
@@ -494,4 +503,8 @@ void Level::Reset() {
     Logs.clear();
 
     initialize();
+}
+
+void Level::DebugTileColor(Tile* tile) {
+    tile->isColored == true;
 }

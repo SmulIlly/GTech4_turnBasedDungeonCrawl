@@ -34,6 +34,8 @@ public:
     void GameOver();
     void Reset();
 
+    void DebugTileColor(Tile* Tile);
+
 protected:
     std::vector<std::string> map;
     int GridSizeX;
