@@ -1,4 +1,5 @@
 ﻿  Level.cpp
-C:\Users\bdaniel\Documents\GitHub\GTech4_turnBasedDungeonCrawl\G-Tech4_Projet1\Level.cpp(208,21): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
-C:\Users\bdaniel\Documents\GitHub\GTech4_turnBasedDungeonCrawl\G-Tech4_Projet1\Level.cpp(302,1): warning C4715: 'Level::setRandomPosition' : les chemins de contrôle ne retournent pas tous une valeur
-  G-Tech4_Projet1.vcxproj -> C:\Users\bdaniel\Documents\GitHub\GTech4_turnBasedDungeonCrawl\x64\Debug\G-Tech4_Projet1.exe
+C:\Users\ewallis\Documents\GitHub\GTech4_turnBasedDungeonCrawl\G-Tech4_Projet1\Level.cpp(212,21): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\ewallis\Documents\GitHub\GTech4_turnBasedDungeonCrawl\G-Tech4_Projet1\Level.cpp(537,21): warning C4553: '==' : résultat de l'expression non utilisé ; souhaitiez-vous utiliser '=' ?
+C:\Users\ewallis\Documents\GitHub\GTech4_turnBasedDungeonCrawl\G-Tech4_Projet1\Level.cpp(306,1): warning C4715: 'Level::setRandomPosition' : les chemins de contrôle ne retournent pas tous une valeur
+  G-Tech4_Projet1.vcxproj -> C:\Users\ewallis\Documents\GitHub\GTech4_turnBasedDungeonCrawl\x64\Debug\G-Tech4_Projet1.exe

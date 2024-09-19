@@ -213,11 +213,11 @@ void Level::UpdateGrid()
 
         for (int i = 0; i < 6; i++)
         {
-            if(LogSize-i > 0 && (LogSize-i) < Logs.size())
+            if (LogSize - i > 0 && (LogSize - i) < Logs.size())
             {
                 std::cout << Logs[(LogSize - i)] << std::endl;
             }
-            else if(LogSize-i == 0)
+            else if (LogSize - i == 0)
             {
                 std::cout << Logs[0] << std::endl;
             }
@@ -415,7 +415,7 @@ void Level::ennemyTurn() {
         int disX = std::abs(Monsters[i]->posX - player->posX);
         int disY = std::abs(Monsters[i]->posY - player->posY);
         int dis = disX + disY;
-        if (dis == 1) {
+        if (dis == 1 && Monsters[i]->m_dead == false) {
             Level::attack(Monsters[i], player);
         }
 
