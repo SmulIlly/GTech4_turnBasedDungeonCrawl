@@ -1,6 +1,7 @@
 ﻿  Game.cpp
-C:\Users\bdaniel\Documents\GitHub\GTech4_turnBasedDungeonCrawl\G-Tech4_Projet1\Game.cpp(6,10): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
-C:\Users\bdaniel\Documents\GitHub\GTech4_turnBasedDungeonCrawl\G-Tech4_Projet1\Game.cpp(49,16): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
-C:\Users\bdaniel\Documents\GitHub\GTech4_turnBasedDungeonCrawl\G-Tech4_Projet1\Game.cpp(50,16): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
-C:\Users\bdaniel\Documents\GitHub\GTech4_turnBasedDungeonCrawl\G-Tech4_Projet1\Game.cpp(52,12): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
-  G-Tech4_Projet1.vcxproj -> C:\Users\bdaniel\Documents\GitHub\GTech4_turnBasedDungeonCrawl\x64\Debug\G-Tech4_Projet1.exe
+C:\Users\ewallis\Documents\GitHub\GTech4_turnBasedDungeonCrawl\G-Tech4_Projet1\Game.cpp(6,10): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+C:\Users\ewallis\Documents\GitHub\GTech4_turnBasedDungeonCrawl\G-Tech4_Projet1\Game.cpp(54,16): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\ewallis\Documents\GitHub\GTech4_turnBasedDungeonCrawl\G-Tech4_Projet1\Game.cpp(55,16): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\ewallis\Documents\GitHub\GTech4_turnBasedDungeonCrawl\G-Tech4_Projet1\Game.cpp(57,12): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
+  LINK : C:\Users\ewallis\Documents\GitHub\GTech4_turnBasedDungeonCrawl\x64\Debug\G-Tech4_Projet1.exe introuvable ou non généré par la dernière édition de liens incrémentielle ; édition de liens complète en cours
+  G-Tech4_Projet1.vcxproj -> C:\Users\ewallis\Documents\GitHub\GTech4_turnBasedDungeonCrawl\x64\Debug\G-Tech4_Projet1.exe
